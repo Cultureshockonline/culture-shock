@@ -7,12 +7,15 @@ const stories = [
   description: "After his departure from Columbia Records, the Atlanta rapper's continued momentum highlights the possibilities of building a career outside the major-label system.",
 image: "/images/glokk.jpeg",
 },
-  {
-    category: "FASHION",
-    title: "The New Generation Redefining Streetwear",
-    description: "How emerging designers are challenging traditional fashion.",
-    image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=900",
-  },
+
+{
+  category: "FASHION",
+  link: "/articles/martine-rose",
+  title: "Martine Rose: A New Era for Balenciaga",
+  description: "The British-Jamaican designer prepares to lead one of fashion's most recognizable luxury houses.",
+  image: "/images/martine-rose.jpg",
+},
+
   {
     category: "SPORTS",
     title: "Basketball Culture Is Bigger Than the Game",
@@ -75,28 +78,43 @@ className="h-80 w-full object-cover md:h-[440px] transition-transform duration-5
 
           <div className="space-y-8">
             {stories.slice(1).map((story) => (
-              <article
-                key={story.category}
-                id={story.category.toLowerCase()}
-                className="grid gap-5 border-b border-gray-200 pb-8 sm:grid-cols-2"
-              >
-                <img
-                  src={story.image}
-                  alt={story.category}
-                  className="h-48 w-full object-cover"
-                />
-                <div>
-                  <p className="text-xs font-bold tracking-widest text-blue-600">
-                    {story.category}
-                  </p>
-                  <h3 className="mt-3 text-2xl font-black leading-tight">
-                    {story.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-gray-600">
-                    {story.description}
-                  </p>
-                </div>
-              </article>
+              
+<article
+  key={story.category}
+  id={story.category.toLowerCase()}
+  className="grid gap-5 border-b border-gray-200 pb-8 sm:grid-cols-2"
+>
+  <a
+    href={story.link || "#"}
+    className="group block overflow-hidden"
+  >
+    <img
+      src={story.image}
+      alt={story.title}
+      className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+  </a>
+
+  <div>
+    <p className="text-xs font-bold tracking-widest text-blue-600">
+      {story.category}
+    </p>
+
+    <h3 className="mt-3 text-2xl font-black leading-tight">
+      <a
+        href={story.link || "#"}
+        className="transition-colors duration-300 hover:text-blue-600"
+      >
+        {story.title}
+      </a>
+    </h3>
+
+    <p className="mt-3 text-sm text-gray-600">
+      {story.description}
+    </p>
+  </div>
+</article>
+
             ))}
           </div>
         </div>

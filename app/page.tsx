@@ -16,12 +16,17 @@ image: "/images/glokk.jpeg",
   image: "/images/martine-rose.jpg",
 },
 
-  {
-    category: "SPORTS",
-    title: "Basketball Culture Is Bigger Than the Game",
-    description: "The intersection of basketball, fashion, music, and identity.",
-    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=900",
-  },
+  
+{
+  category: "SPORTS",
+  link: "/articles/nba-tunnel-watch",
+  title: "NBA Tunnel Watch: My Top 3 Fits From Opening Week",
+  description: "From experimental silhouettes to carefully considered details, we examine three standout looks from the NBA's opening week.",
+  
+image: "/images/jalen-williams-tunnel.jpg",
+
+},
+
 ];
 
 export default function Home() {
